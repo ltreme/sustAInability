@@ -1,5 +1,5 @@
 import "./App.css";
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import { useState } from "react";
 import StepMenu from "./components/StepMenu";
 import MaterialAcquisition from "./components/sections/MaterialAcquisitionSection";
@@ -12,7 +12,7 @@ import LogisticsSection from "./components/sections/LogisticsSection";
 import LastMileSection from "./components/sections/LastMileSections";
 
 function App() {
-  const [activeStep, setActiveStep] = useState<string>("");
+  const [activeStep, setActiveStep] = useState<string>("material_acquisition");
 
   const [materialScore, setMaterialScore] = useState<number>(0);
   const [harvestingScore, setHarvestingScore] = useState<number>(0);
@@ -45,9 +45,14 @@ function App() {
         >
           <Paper sx={{ height: "100vh" }}>
             <Box sx={{ paddingTop: 4, paddingX: 2 }}>
-              <Typography variant="h4" color="gray">
-                LOGO
-              </Typography>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img
+                  src="logo_ecooracle.png"
+                  alt="logo"
+                  width={120}
+                  height={120}
+                />
+              </div>
               <StepMenu
                 activeStep={activeStep}
                 onChange={setActiveStep}
